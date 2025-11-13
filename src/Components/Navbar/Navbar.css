@@ -1,0 +1,56 @@
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 120px;
+  color: white;
+}
+
+/* === BRAND NAME === */
+.brand-name {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.brand-name:hover {
+  color: #DA7C25;
+}
+
+/* === NAV MENU === */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 45px;
+  font-size: 18px;
+  color: white;
+}
+
+.nav-menu li {
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.nav-menu li:hover {
+  color: #DA7C25;
+}
+
+/* === CONNECT BUTTON === */
+.nav-connect {
+  padding: 10px 25px;
+  border-radius: 40px;
+  background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+  font-weight: 500;
+}
+
+.nav-connect:hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,80 @@
+.mywork {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 80px 170px;
+}
+
+.mywork-title {
+    position: relative;
+}
+.mywork-title h1{
+    padding: 0px 30px;
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.mywork-title img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.mywork-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+/* === EACH WORK IMAGE === */
+.mywork-container img {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 420px;
+  height: 280px;
+  border: 2px solid white;       /* ✅ White border */
+  border-radius: 10px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+/* === HOVER EFFECT ON EACH IMAGE === */
+.mywork-container img:hover {
+  transform: scale(1.10);        /* ✅ Slight zoom on hover */
+  border: 2px solid #ff00ff;     /* ✅ Magenta border */
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.4); /* ✅ Soft glow */
+}
+
+/* === SHOW MORE BUTTON === */
+.mywork-showmore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border-radius: 50px;
+  border: 2px solid white;
+  padding: 20px 50px;
+  font-size: 22px;
+  font-weight: 500;
+  color: white;
+  margin: 60px auto;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  background: transparent;
+}
+
+/* === HOVER EFFECT FOR BUTTON === */
+.mywork-showmore:hover {
+  gap: 30px;
+  background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
+  border-color: transparent;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+}
