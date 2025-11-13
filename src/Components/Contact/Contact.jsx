@@ -7,32 +7,55 @@ import call_icon from '../../assets/call_icon.svg'
 
 const Contact = () => {
   return (
-    <div className='Contact'>
-        <div className="contact-title">
-            <h1>Get in Touch</h1>
-            <img src={theme_pattern} alt="" />
-        </div>
-        <div className="contact-section">
-            <div className="contact-left">
-                <h1>Lets Talk</h1>
-                <p>I’m currently available to take on new projects, so feel free to send me a message about what you’d like to build</p>
-                <div className="contact-details">
-                    <div className="contact-detail">
-                        <img src={mail_icon} alt="" /><p>muhammadmihrajma@gmail.com</p>
-                    </div>
-                    <div className="contact-detail">
-                        <img src={call_icon} alt="" /><p>+91 9039032004</p>
-                    </div>
-                    <div className="contact-detail">
-                        <img src={location_icon} alt="" /><p>Kochi !</p>
-                    </div>
-                </div>
+    <div className='contact'>
+      <div className="contact-title">
+        <h1>Get in Touch</h1>
+        <img src={theme_pattern} alt="pattern" />
+      </div>
+
+      <div className="contact-section">
+        {/* LEFT SIDE */}
+        <div className="contact-left">
+          <h1>Let's Talk</h1>
+          <p>
+            I’m currently available to take on new projects, so feel free to send 
+            me a message about what you’d like to build.
+          </p>
+
+          <div className="contact-details">
+            <div className="contact-detail">
+              <img src={mail_icon} alt="email" />
+              <p>muhammadmihrajma@gmail.com</p>
             </div>
-            <form className="div contact-right">
-                <label htmlFor="">Your Name</label>
-                <input type="text" placeholder='Enter your Name' name='' />
-            </form>
+
+            <div className="contact-detail">
+              <img src={call_icon} alt="call" />
+              <p>+91 9039032004</p>
+            </div>
+
+            <div className="contact-detail">
+              <img src={location_icon} alt="location" />
+              <p>Kochi, India</p>
+            </div>
+          </div>
         </div>
+
+        {/* RIGHT SIDE FORM */}
+        <form className="contact-right">
+          <label>Your Name</label>
+          <input type="text" placeholder="Enter your Name" required />
+
+          <label>Your Email</label>
+          <input type="email" placeholder="Enter your Email" required />
+
+          <label>Your Message</label>
+          <textarea rows="6" placeholder="Enter your Message" required></textarea>
+
+          <button type="submit" className="contact-submit">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   )
 }
