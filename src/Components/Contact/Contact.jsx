@@ -1,11 +1,34 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './Contact.css'
 import theme_pattern from '../../assets/theme_pattern.svg'
 import mail_icon from '../../assets/mail_icon.svg'
 import location_icon from '../../assets/location_icon.svg'
 import call_icon from '../../assets/call_icon.svg'
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service-portfolio-miju",     // Your Service ID
+      "template-contact-us",        // Your Template ID
+      form.current,
+      "u20CgkYAKPqC0ah0q"           // Your Public Key
+    )
+    .then(() => {
+        alert("Message Sent Successfully!");
+        e.target.reset();
+    })
+    .catch((error) => {
+        alert("Failed to send message. Try again.");
+        console.log(error);
+    });
+  };
+
   return (
     <div className='contact'>
       <div className="contact-title">
@@ -14,6 +37,7 @@ const Contact = () => {
       </div>
 
       <div className="contact-section">
+
         {/* LEFT SIDE */}
         <div className="contact-left">
           <h1>Let's Talk</h1>
@@ -41,23 +65,24 @@ const Contact = () => {
         </div>
 
         {/* RIGHT SIDE FORM */}
-        <form className="contact-right">
+        <form ref={form} onSubmit={sendEmail} className="contact-right">
           <label>Your Name</label>
-          <input type="text" placeholder="Enter your Name" required />
+          <input type="text" name="user_name" placeholder="Enter your Name" required />
 
           <label>Your Email</label>
-          <input type="email" placeholder="Enter your Email" required />
+          <input type="email" name="user_email" placeholder="Enter your Email" required />
 
           <label>Your Message</label>
-          <textarea rows="6" placeholder="Enter your Message" required></textarea>
+          <textarea name="message" rows="6" placeholder="Enter your Message" required></textarea>
 
           <button type="submit" className="contact-submit">
             Submit
           </button>
         </form>
+
       </div>
     </div>
   )
 }
 
-export default Contact
+export default Contact;

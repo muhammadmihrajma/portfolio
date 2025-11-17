@@ -1,3 +1,4 @@
+/* === CONTACT MAIN WRAPPER === */
 .contact {
   display: flex;
   flex-direction: column;
@@ -6,12 +7,14 @@
   gap: 80px;
 }
 
+/* === TITLE === */
 .contact-title {
   position: relative;
+  text-align: center;
 }
 
 .contact-title h1 {
-  padding: 0px 30px;
+  padding: 0 30px;
   font-size: 80px;
   font-weight: 600;
 }
@@ -23,13 +26,18 @@
   z-index: -1;
 }
 
+/* === LEFT & RIGHT WRAPPER === */
 .contact-section {
   display: flex;
   gap: 90px;
   align-items: flex-start;
+  width: 100%;
+  justify-content: center;
 }
 
-/* LEFT SIDE */
+/* =======================
+       LEFT SIDE
+========================= */
 .contact-left {
   display: flex;
   flex-direction: column;
@@ -64,7 +72,9 @@
   width: 30px;
 }
 
-/* RIGHT SIDE FORM */
+/* =======================
+         FORM (RIGHT)
+========================= */
 .contact-right {
   display: flex;
   flex-direction: column;
@@ -86,6 +96,7 @@
   color: white;
   font-size: 18px;
   outline: none;
+  transition: 0.3s;
 }
 
 .contact-right input:focus,
@@ -93,7 +104,7 @@
   border-color: #da7c25;
 }
 
-/* SUBMIT BUTTON */
+/* === SUBMIT BUTTON === */
 .contact-submit {
   width: 180px;
   padding: 15px;
@@ -110,4 +121,90 @@
 
 .contact-submit:hover {
   transform: scale(1.05);
+}
+
+/* =======================
+      RESPONSIVE FIXES
+========================= */
+
+/* --- Large Tablets (1024px) --- */
+@media (max-width: 1024px) {
+  .contact {
+    margin: 60px 60px;
+  }
+
+  .contact-section {
+    gap: 50px;
+  }
+
+  .contact-left h1 {
+    font-size: 38px;
+  }
+
+  .contact-title h1 {
+    font-size: 65px;
+  }
+}
+
+/* --- Tablets (768px) --- */
+@media (max-width: 768px) {
+  .contact {
+    margin: 50px 20px;
+    gap: 60px;
+  }
+
+  .contact-section {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+  }
+
+  .contact-right {
+    max-width: 480px;
+  }
+
+  .contact-title h1 {
+    font-size: 55px;
+  }
+}
+
+/* --- Mobile (480px) --- */
+@media (max-width: 480px) {
+  .contact-title h1 {
+    font-size: 40px;
+  }
+
+  .contact {
+    margin: 40px 10px;
+  }
+
+  .contact-left h1 {
+    font-size: 28px;
+  }
+
+  .contact-left p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .contact-detail {
+    font-size: 16px;
+  }
+
+  .contact-right input,
+  .contact-right textarea {
+    font-size: 15px;
+    padding: 15px;
+  }
+
+  .contact-submit {
+    width: 150px;
+    font-size: 16px;
+    padding: 12px;
+  }
 }

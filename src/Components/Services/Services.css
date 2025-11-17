@@ -88,3 +88,33 @@
   transform: scale(1.05);
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.3); /* ✅ Soft white glow */
 }
+
+/* RESPONSIVE SERVICES */
+@media (max-width: 1024px) {
+  .services-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    margin: 60px 20px;
+  }
+
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .services-title h1 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-title h1 { font-size: 38px; }
+}
+
+@media (max-width: 360px) {
+  .services-title h1 { font-size: 32px; }
+}

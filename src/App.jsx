@@ -5,17 +5,38 @@ import About from './Components/About/About'
 import Services from './Components/Services/Services'
 import MyWork from './Components/MyWork/MyWork'
 import Contact from './Components/Contact/Contact'
+import Footer from './Components/Footer/Footer'
 
 const App = () => {
   return (
-    <div>
-        <Navbar/>
-        <Hero/>
-        <About/>
-        <Services/>
-        <MyWork/>
-        <Contact/>
-    </div>
+    <>
+      {/* NAVBAR */}
+      <Navbar />
+
+      {/* SECTIONS FOR SMOOTH SCROLL */}
+      <div id="home">
+        <Hero />
+      </div>
+
+      <div id="about">
+        <About />
+      </div>
+
+      <div id="services">
+        <Services />
+      </div>
+
+      <div id="portfolio">
+        <MyWork />
+      </div>
+
+      <div id="contact">
+        <Contact />
+      </div>
+
+      {/* FOOTER */}
+      <Footer />
+    </>
   )
 }
 
