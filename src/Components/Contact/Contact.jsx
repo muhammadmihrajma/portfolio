@@ -59,7 +59,7 @@ const Contact = () => {
       </div>
 
       <div className="contact-section">
-        
+
         {/* LEFT SIDE */}
         <div className="contact-left">
           <h1>Let's Talk</h1>
@@ -86,6 +86,8 @@ const Contact = () => {
 
         {/* RIGHT SIDE FORM */}
         <form ref={form} onSubmit={sendEmail} className="contact-right">
+
+          {/* NAME FIELD (letters only) */}
           <label>Your Name</label>
           <input
             type="text"
@@ -93,15 +95,23 @@ const Contact = () => {
             placeholder="Enter your Name"
             required
             disabled={isSubmitting}
+            pattern="[A-Za-z ]+"
+            title="Only alphabets are allowed"
+            onInput={(e) => {
+              e.target.value = e.target.value.replace(/[^A-Za-z ]/g, "");
+            }}
           />
 
+          {/* EMAIL FIELD (must end with @gmail.com) */}
           <label>Your Email</label>
           <input
             type="email"
             name="user_email"
-            placeholder="Enter your Email"
+            placeholder="Enter your Gmail ID"
             required
             disabled={isSubmitting}
+            pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$"
+            title="Email must be a valid Gmail address (example@gmail.com)"
           />
 
           <label>Your Message</label>
